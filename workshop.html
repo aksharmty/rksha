@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Law of Attraction Workshop | Mind Reprogramming</title>
+<meta name="description" content="Join Law of Attraction Workshop. Learn mind reprogramming, remove blocks & achieve goals. 3-hour live Hindi session.">
+<meta name="keywords" content="law of attraction workshop, mind reprogramming, manifestation, subconscious mind">
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f5f7fa;color:#222}
+.container{max-width:900px;margin:auto;padding:20px}
+.box{background:#fff;padding:25px;border-radius:10px;margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.08)}
+h1{font-size:28px;margin-bottom:10px}
+h2{font-size:22px;margin-bottom:10px}
+p{line-height:1.6}
+.btn{display:block;text-align:center;background:#25D366;color:#fff;padding:15px;font-size:18px;border-radius:8px;text-decoration:none;font-weight:bold;margin-bottom:10px}
+.btn:hover{background:#1ebc5a}
+.btn-upi{background:#4CAF50}
+.highlight{color:#e63946;font-weight:bold}
+ul{padding-left:20px}
+li{margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="box">
+<h1>Still Not Achieving Your Goals?</h1>
+<p class="highlight">Your method might be wrong.</p>
+<p>If nothing is changing in your life, it's not luck — it's your internal programming.</p>
+</div>
+
+<div class="box">
+<h2 class="highlight">🚨 Next Batch: This Saturday</h2>
+<p>Seats are filling fast. Once this batch is full, you’ll have to wait for the next one.</p>
+<p class="highlight">⏳ Time left to join:</p>
+<p id="countdown" style="font-size:20px;font-weight:bold;"></p>
+</div>
+
+<div class="box">
+<h2>This 3-Hour Workshop Will Help You:</h2>
+<ul>
+<li>Understand how your subconscious mind works</li>
+<li>Identify hidden blocks stopping your success</li>
+<li>Learn the correct Law of Attraction method</li>
+<li>Start getting real results</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>Are You Facing This?</h2>
+<ul>
+<li>Health not improving</li>
+<li>Business not growing</li>
+<li>Debt increasing</li>
+<li>Goals not achieving</li>
+<li>Peace missing</li>
+<li>Still waiting for your dream job</li>
+</ul>
+<p class="highlight">If yes, this workshop is for you.</p>
+</div>
+
+<div class="box">
+<h2>Workshop Details</h2>
+<p><b>Duration:</b> 3 Hours<br>
+<b>Schedule:</b> Saturday 7 PM – 10 PM<br>
+<b>Language:</b> Hindi<br>
+<b>Fee:</b> ₹5000<br>
+<b>Private Session:</b> Available (additional charges apply)</p>
+</div>
+
+<div class="box">
+<h2>Why Join Now?</h2>
+<p>Every day you delay, the same problems repeat.</p>
+<p class="highlight">If you don’t fix this now, nothing will change.</p>
+</div>
+
+<div class="box">
+<h2>⚠ Only <span id="seats">20</span> Seats Left</h2>
+<p>We keep sessions small for better transformation.</p>
+<a class="btn" href="https://wa.me/919213816442?text=I%20want%20to%20join%20workshop.%20Please%20share%20details.">👉 Join on WhatsApp Now</a>
+
+<a class="btn btn-upi" href="upi://pay?pa=9213816442@apl&pn=Workshop&am=5000&cu=INR">💰 Pay ₹5000 via UPI</a>
+
+<p><b>Or scan QR (for Desktop users):</b></p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9213816442@apl&pn=Workshop&am=5000&cu=INR" alt="UPI QR Code">
+
+<p>Scan using any UPI app (GPay, PhonePe, Paytm)</p>
+
+<button onclick="copyUPI()" style="display:block;width:100%;padding:12px;border-radius:8px;border:none;background:#333;color:#fff;font-weight:bold;cursor:pointer;">📋 Copy UPI ID (9213816442@apl)</button>
+<p id="copyMsg" style="font-size:14px;color:green;display:none;">UPI ID copied!</p>
+
+<p><b>After payment:</b><br>Send payment screenshot on WhatsApp to confirm your seat.</p>
+</div>
+
+<div class="box">
+<h2>Frequently Asked Questions</h2>
+<p><b>Is this live?</b><br>Yes, it is a live 3-hour session.</p>
+<p><b>Language?</b><br>Hindi</p>
+<p><b>Will I get recording?</b><br>No, live session only.</p>
+<p><b>Is it practical?</b><br>Yes, step-by-step guidance included.</p>
+<p><b>Private session?</b><br>Available (additional charges apply)</p>
+</div>
+
+</div>
+
+<script>
+function getNextSaturday() {
+  const now = new Date();
+  const day = now.getDay();
+  const diff = (6 - day + 7) % 7 || 7;
+  const nextSat = new Date(now);
+  nextSat.setDate(now.getDate() + diff);
+  nextSat.setHours(19,0,0,0); // 7 PM
+  return nextSat;
+}
+
+const countdownEl = document.getElementById('countdown');
+const target = getNextSaturday();
+
+function updateCountdown() {
+  const now = new Date();
+  const diff = target - now;
+
+  if (diff <= 0) {
+    countdownEl.innerHTML = "Batch Started";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  countdownEl.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+// Dynamic seat reduction (for urgency)
+let seats = 20;
+setInterval(()=>{
+  if(seats>5){
+    seats--;
+    document.getElementById('seats').innerText = seats;
+  }
+},8000);
+function copyUPI(){
+  navigator.clipboard.writeText('9213816442@apl');
+  const msg = document.getElementById('copyMsg');
+  msg.style.display = 'block';
+  setTimeout(()=>{msg.style.display='none';},2000);
+}
+</script>
+
+</body>
+</html>
