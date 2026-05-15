@@ -19,3 +19,81 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <br>
+---
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#111;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+button{
+    padding:16px 28px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<button id="continueBtn">
+    Continue
+</button>
+
+<script>
+(function(){
+
+    const SMARTLINK =
+    "https://www.profitablecpmratenetwork.com/ka9w8m66?key=9ef4829d333930832621abd4b2481d67";
+
+    const DESTINATION =
+    "https://rajkumarspiritualhealing.adquash.com/service.html";
+
+    const KEY_TIME = "smartlink_time";
+    const COOLDOWN = 30 * 60 * 1000; // 30 min
+
+    const btn = document.getElementById("continueBtn");
+
+    function shouldShowAd(){
+
+        const lastTime = localStorage.getItem(KEY_TIME);
+
+        if(!lastTime) return true;
+
+        return (Date.now() - parseInt(lastTime)) > COOLDOWN;
+    }
+
+    btn.addEventListener("click", function(){
+
+        // Show ad only after cooldown
+        if(shouldShowAd()){
+
+            localStorage.setItem(KEY_TIME, Date.now());
+
+            // Open smartlink in new tab
+            const adWindow = window.open(
+                SMARTLINK,
+                "_blank"
+            );
+
+            // Optional focus handling
+            if(adWindow){
+                adWindow.blur();
+                window.focus();
+            }
+        }
+
+        // Open actual content in same tab
+        window.location.href = DESTINATION;
+
+    });
+
+})();
+</script>
