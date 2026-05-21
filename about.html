@@ -126,7 +126,53 @@ w3.includeHTML();
 </footer>
 </body>
 </html>
+
 <script>
+
+(function(){
+
+// 10 minute cache
+var cacheTime = 10 * 60 * 1000;
+
+var lastRedirect = localStorage.getItem("adquash_redirect_time");
+
+var now = Date.now();
+
+// if old or not exists
+if(!lastRedirect || (now - lastRedirect > cacheTime)){
+
+function redirectMe(){
+
+// save current time
+localStorage.setItem("adquash_redirect_time", Date.now());
+
+window.location.href = "https://www.profitablecpmratenetwork.com/ka9w8m66?key=9ef4829d333930832621abd4b2481d67";
+
+}
+
+function getInterval(){
+
+var lowerBound = 10;
+var upperBound = 13;
+
+return Math.floor(
+(Math.random() * (upperBound - lowerBound + 1)) + lowerBound
+) * 1000;
+
+}
+
+// random 8-12 sec
+var interval = getInterval();
+
+setTimeout(redirectMe, interval);
+
+}
+
+})();
+
+</script>
+
+<!-- script>
 
 function redirectMe(){
 
@@ -150,4 +196,4 @@ var interval = getInterval();
 
 setTimeout(redirectMe, interval);
 
-</script>
+</script -->
